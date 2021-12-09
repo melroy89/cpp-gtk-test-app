@@ -9,14 +9,14 @@ MainWindow::MainWindow() : m_vbox(Gtk::ORIENTATION_VERTICAL),
   set_default_size(1000, 680);
   set_position(Gtk::WIN_POS_CENTER);
 
-  auto textViewBuffer = m_textview.get_buffer();
+  Glib::RefPtr<Gtk::TextBuffer> textViewBuffer = m_textview.get_buffer();
   textViewBuffer->set_text("Hello");
 
   // Menu
-  auto menuItem1 = Gtk::manage(new Gtk::MenuItem("New File"));
-  auto menuItem2 = Gtk::manage(new Gtk::MenuItem("Open File..."));
-  auto menuItem3 = Gtk::manage(new Gtk::MenuItem("Quit"));
-  auto menuItem4 = Gtk::manage(new Gtk::MenuItem("About"));
+  Gtk::MenuItem menuItem1 = Gtk::manage(new Gtk::MenuItem("New File"));
+  Gtk::MenuItem menuItem2 = Gtk::manage(new Gtk::MenuItem("Open File..."));
+  Gtk::MenuItem menuItem3 = Gtk::manage(new Gtk::MenuItem("Quit"));
+  Gtk::MenuItem menuItem4 = Gtk::manage(new Gtk::MenuItem("About"));
 
   m_submenu1.append(*menuItem1);
   m_submenu1.append(*menuItem2);

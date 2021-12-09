@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[])
 {
-  auto app = Gtk::Application::create();
+  Glib::RefPtr<Gtk::Application>  app = Gtk::Application::create();
 
   MainWindow window;
   return app->run(window);

@@ -1,5 +1,7 @@
 project(test-app C CXX)
 
+set(PROJECT_TARGET test_app)
+
 # Set the minimum version of cmake required to build this project
 cmake_minimum_required(VERSION 3.10)
 
@@ -18,11 +20,11 @@ set(SOURCES
 )
 
 # Create the executable
-add_executable(test_app ${SOURCES})
-target_link_libraries(test_app PRIVATE ${GTKMM_LIBRARIES})
+add_executable(${PROJECT_TARGET} ${SOURCES})
+target_link_libraries(${PROJECT_TARGET} PRIVATE ${GTKMM_LIBRARIES})
 
 # Setup CMake to use GTK+, tell the compiler where to look for headers
 # and to the linker where to look for libraries
-target_include_directories(test_app PRIVATE ${GTKMM_INCLUDE_DIRS})
-target_link_directories(test_app PRIVATE ${GTKMM_LIBRARY_DIRS})
-target_compile_options(test_app PRIVATE ${GTKMM_CFLAGS_OTHER})
+target_include_directories(${PROJECT_TARGET} PRIVATE ${GTKMM_INCLUDE_DIRS})
+target_link_directories(${PROJECT_TARGET} PRIVATE ${GTKMM_LIBRARY_DIRS})
+target_compile_options(${PROJECT_TARGET} PRIVATE ${GTKMM_CFLAGS_OTHER})

@@ -14,4 +14,5 @@ protected:
   Gtk::MenuItem m_menuItem2;
   Gtk::Menu m_submenu1;
   Gtk::Menu m_submenu2;
+  Gtk::TextView m_textview;
 };

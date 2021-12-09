@@ -13,10 +13,10 @@ MainWindow::MainWindow() : m_vbox(Gtk::ORIENTATION_VERTICAL),
   textViewBuffer->set_text("Hello");
 
   // Menu
-  Gtk::MenuItem menuItem1 = Gtk::manage(new Gtk::MenuItem("New File"));
-  Gtk::MenuItem menuItem2 = Gtk::manage(new Gtk::MenuItem("Open File..."));
-  Gtk::MenuItem menuItem3 = Gtk::manage(new Gtk::MenuItem("Quit"));
-  Gtk::MenuItem menuItem4 = Gtk::manage(new Gtk::MenuItem("About"));
+  Gtk::MenuItem* menuItem1 = Gtk::manage(new Gtk::MenuItem("New File"));
+  Gtk::MenuItem* menuItem2 = Gtk::manage(new Gtk::MenuItem("Open File..."));
+  Gtk::MenuItem* menuItem3 = Gtk::manage(new Gtk::MenuItem("Quit"));
+  Gtk::MenuItem* menuItem4 = Gtk::manage(new Gtk::MenuItem("About"));
 
   m_submenu1.append(*menuItem1);
   m_submenu1.append(*menuItem2);
